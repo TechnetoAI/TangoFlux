@@ -1,1 +1,17 @@
-[{"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}, {"captions": "Rhythmic wooden table tapping overlaid with steady water pouring sound", "location": "data/test.wav", "duration": 10.0}]
+[
+    {
+        "captions": "Chillwave and Lo-fi Hip-Hop influenced beat with a groovy and upbeat tempo.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/2B4633C0-798F-11EF-8301-E5662656CD9C_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Melancholic and nostalgic soundscape with psychedelic and trippy elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F78C9250-E167-11EE-B313-A51536C2C474_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a soulful vibe, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/226FE010-BA19-11EE-AE6F-D9E72AE17E1B_chunk2.wav",
+        "duration": 30.0
+    }
+]

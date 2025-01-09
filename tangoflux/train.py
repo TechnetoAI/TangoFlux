@@ -22,6 +22,7 @@ from tqdm.auto import tqdm
 from transformers import SchedulerType, get_scheduler
 from model import TangoFlux
 from datasets import load_dataset, Audio
+from wandb import Audio as AudioLog
 from utils import Text2AudioDataset, read_wav_file, pad_wav
 
 from diffusers import AutoencoderOobleck
@@ -99,7 +100,7 @@ def parse_args():
     parser.add_argument(
         "--lr_scheduler_type",
         type=SchedulerType,
-        default="linear",
+        default="constant_with_warmup",
         help="The scheduler type to use.",
         choices=[
             "linear",
@@ -311,7 +312,7 @@ def main():
     test_dataloader = DataLoader(
         test_dataset,
         shuffle=False,
-        batch_size=config["training"]["per_device_batch_size"],
+        batch_size=1,
         collate_fn=test_dataset.collate_fn,
     )
 
@@ -498,6 +499,76 @@ def main():
                     if output_dir is not None:
                         output_dir = os.path.join(output_dir, output_dir)
                     accelerator.save_state(output_dir)
+                    
+                    
+                    generated_audios = []
+        
+                    for _, batch  in enumerate(test_dataloader):
+                        with accelerator.accumulate(model) and torch.no_grad():
+                            unwrapped_vae = accelerator.unwrap_model(vae)
+                            unwrapped_model = accelerator.unwrap_model(model)
+                            device = model.device
+                            text, audios, duration, _ = batch
+
+
+                            audio = audios[0]
+                            text = text[0]
+                            
+                            audio_prefix_duration = 10
+                            
+                            
+                            wav = read_wav_file(
+                                audio, audio_prefix_duration
+                            )
+                            
+                            if (
+                                wav.shape[0] == 1
+                            ):  ## If this audio is mono, we repeat the channel so it become "fake stereo"
+                                wav = wav.repeat(2, 1)
+
+                            audio_input = torch.stack([wav], dim=0)
+                            audio_input = audio_input.to(unwrapped_vae.device)
+                            audio_latent = unwrapped_vae.encode(
+                                audio_input
+                            ).latent_dist.sample()
+                            
+                            
+                            audio_latent = audio_latent.transpose(
+                                1, 2
+                            )
+                            
+                        
+                            latents = unwrapped_model.inference_flow(
+                                text,
+                                duration=30,
+                                num_inference_steps=32,
+                                guidance_scale=4.5,
+                                prefix=audio_latent,
+                                disable_progress=True
+                            )
+                                
+                            wave = unwrapped_vae.decode(latents.transpose(2, 1)).sample.cpu()[0]
+                            
+                            
+                            generated_audios.append({
+                                "text": text,
+                                "audio": wave.transpose(0,1)
+                            })
+                            
+                            wandb.log(
+                            {
+                                "Speech samples": [
+                                    AudioLog(
+                                        item["audio"],
+                                        caption=item["text"],
+                                        sample_rate=unwrapped_vae.config.sampling_rate,
+                                    )
+                                    for item in generated_audios
+                                ]
+                            },
+                            step=completed_steps,
+                        )
+                    
 
         if completed_steps >= args.max_train_steps:
             break
@@ -506,7 +577,7 @@ def main():
         eval_progress_bar = tqdm(
             range(len(eval_dataloader)), disable=not accelerator.is_local_main_process
         )
-        for step, batch in enumerate(eval_dataloader):
+        for _, batch in enumerate(eval_dataloader):
             with accelerator.accumulate(model) and torch.no_grad():
                 device = model.device
                 text, audios, duration, _ = batch
@@ -537,6 +608,10 @@ def main():
                 total_val_loss += val_loss.detach().float()
                 eval_progress_bar.update(1)
 
+
+            
+
+        
         if accelerator.is_main_process:
 
             result = {}
@@ -567,6 +642,9 @@ def main():
                 save_checkpoint = True
             else:
                 save_checkpoint = False
+                
+                
+
 
         accelerator.wait_for_everyone()
         if accelerator.is_main_process and args.checkpointing_steps == "best":

@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 import torch
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
@@ -57,6 +60,34 @@ def read_wav_file(filename, duration_sec):
         waveform = pad_wav(waveform, int(44100 * duration_sec)).unsqueeze(0)
 
         return waveform
+    
+
+
+def mask_from_start_end_indices(seq_len: int["b"], start: int["b"], end: int["b"]):  # noqa: F722 F821
+    max_seq_len = seq_len.max().item()
+    seq = torch.arange(max_seq_len, device=start.device).long()
+    start_mask = seq[None, :] >= start[:, None]
+    end_mask = seq[None, :] < end[:, None]
+    return start_mask & end_mask
+
+
+def mask_from_frac_lengths(seq_len: int["b"], frac_lengths: float["b"]):  # noqa: F722 F821
+    lengths = (frac_lengths * seq_len).long()
+    max_start = seq_len - lengths
+
+    rand = torch.rand_like(frac_lengths)
+    start = (max_start * rand).long().clamp(min=0)
+    end = start + lengths
+
+    return mask_from_start_end_indices(seq_len, start, end)
+
+
+def mask_from_prefix(seq_len: int["b"], frac_lengths: float["b"]):
+    lengths = (frac_lengths * seq_len).long()    
+    start = lengths
+    end = seq_len
+    
+    return start, mask_from_start_end_indices(seq_len, start, end)
 
 
 class DPOText2AudioDataset(Dataset):
@@ -157,3 +188,6 @@ class Text2AudioDataset(Dataset):
     def collate_fn(self, data):
         dat = pd.DataFrame(data)
         return [dat[i].tolist() for i in dat]
+
+
+
