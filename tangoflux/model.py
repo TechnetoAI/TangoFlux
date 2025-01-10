@@ -632,7 +632,8 @@ class TangoFlux(nn.Module):
             loss = (model_pred.float() - target.float()) ** 2
             
             
-            # loss = loss[rand_span_mask]
+            loss[rand_span_mask]
+            
             loss = (loss).reshape(
                     target.shape[0], -1
                 )

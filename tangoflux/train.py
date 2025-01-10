@@ -100,7 +100,7 @@ def parse_args():
     parser.add_argument(
         "--lr_scheduler_type",
         type=SchedulerType,
-        default="constant_with_warmup",
+        default="linear",
         help="The scheduler type to use.",
         choices=[
             "linear",
@@ -114,7 +114,7 @@ def parse_args():
     parser.add_argument(
         "--num_warmup_steps",
         type=int,
-        default=0,
+        default=2000,
         help="Number of steps for the warmup in the lr scheduler.",
     )
     parser.add_argument(
@@ -179,6 +179,7 @@ def main():
     num_warmup_steps = int(config["training"]["num_warmup_steps"])
     per_device_batch_size = int(config["training"]["per_device_batch_size"])
     gradient_accumulation_steps = int(config["training"]["gradient_accumulation_steps"])
+    max_grad_norm = float(config["training"]["max_grad_norm"])
 
     output_dir = config["paths"]["output_dir"]
 
@@ -205,6 +206,11 @@ def main():
 
     # Handle output directory creation and wandb tracking
     if accelerator.is_main_process:
+        wandb.init(
+            project="Text to Audio Flow matching",
+            settings=wandb.Settings(_disable_stats=True),
+        )
+
         if output_dir is None or output_dir == "":
             output_dir = "saved/" + str(int(time.time()))
 
@@ -221,11 +227,6 @@ def main():
             f.write(json.dumps(dict(vars(args))) + "\n\n")
 
         accelerator.project_configuration.automatic_checkpoint_naming = False
-
-        wandb.init(
-            project="Text to Audio Flow matching",
-            settings=wandb.Settings(_disable_stats=True),
-        )
 
     accelerator.wait_for_everyone()
 
@@ -416,46 +417,66 @@ def main():
     # Duration of the audio clips in seconds
     best_loss = np.inf
     length = config["training"]["max_audio_duration"]
-
+    vae_dir = config["paths"].get("vae_dir", None)
+    
     for epoch in range(starting_epoch, num_train_epochs):
         model.train()
         total_loss, total_val_loss = 0, 0
         for step, batch in enumerate(train_dataloader):
-
             with accelerator.accumulate(model):
-                optimizer.zero_grad()
                 device = model.device
                 text, audios, duration, _ = batch
 
                 with torch.no_grad():
                     audio_list = []
+                    latents = []
 
                     for audio_path in audios:
+                        
+                        if vae_dir:
+                            base_name = os.path.basename(audio_path)
+                            vae_file = os.path.join(
+                                config["paths"]["vae_dir"], base_name.replace(".wav", "_latent.npz")
+                            ) 
+                            
+                            data = np.load(vae_file)
+                            
+                            latent = torch.from_numpy(data['tensor']).to(device)
+                            
+                            latents.append(latent)
+                        else:
+                            wav = read_wav_file(
+                                audio_path, length
+                            )  ## Only read the first 30 seconds of audio
+                            if (
+                                wav.shape[0] == 1
+                            ):  ## If this audio is mono, we repeat the channel so it become "fake stereo"
+                                wav = wav.repeat(2, 1)
+                            audio_list.append(wav)
 
-                        wav = read_wav_file(
-                            audio_path, length
-                        )  ## Only read the first 30 seconds of audio
-                        if (
-                            wav.shape[0] == 1
-                        ):  ## If this audio is mono, we repeat the channel so it become "fake stereo"
-                            wav = wav.repeat(2, 1)
-                        audio_list.append(wav)
 
-                    audio_input = torch.stack(audio_list, dim=0)
-                    audio_input = audio_input.to(device)
-                    unwrapped_vae = accelerator.unwrap_model(vae)
+                    if vae_dir:
+                        audio_latent = torch.stack(latents, dim=0).to(device)
+                    else:
+                        audio_input = torch.stack(audio_list, dim=0)
+                        audio_input = audio_input.to(device)
+                        unwrapped_vae = accelerator.unwrap_model(vae)
+                        audio_latent = unwrapped_vae.encode(
+                            audio_input
+                        ).latent_dist.sample()
+                        
+                    # Tranpose  to (bsz, seq_len, channel)
+                    audio_latent = audio_latent.transpose(
+                            1, 2
+                    )       
+
+                    
 
                     duration = torch.tensor(duration, device=device)
                     duration = torch.clamp(
                         duration, max=length
                     )  ## clamp duration to max audio length
-
-                    audio_latent = unwrapped_vae.encode(
-                        audio_input
-                    ).latent_dist.sample()
-                    audio_latent = audio_latent.transpose(
-                        1, 2
-                    )  ## Tranpose  to (bsz, seq_len, channel)
+                   
 
                 loss, _, _, _ = model(audio_latent, text, duration=duration)
                 total_loss += loss.detach().float()
@@ -464,9 +485,14 @@ def main():
                 if accelerator.sync_gradients:
                     progress_bar.update(1)
                     completed_steps += 1
+                    
+                    accelerator.clip_grad_norm_(model.parameters(), max_grad_norm)
 
                 optimizer.step()
                 lr_scheduler.step()
+                optimizer.zero_grad()
+                
+                
 
             if completed_steps % 10 == 0 and accelerator.is_main_process:
 
@@ -554,21 +580,8 @@ def main():
                                 "text": text,
                                 "audio": wave.transpose(0,1)
                             })
-                            
-                            wandb.log(
-                            {
-                                "Speech samples": [
-                                    AudioLog(
-                                        item["audio"],
-                                        caption=item["text"],
-                                        sample_rate=unwrapped_vae.config.sampling_rate,
-                                    )
-                                    for item in generated_audios
-                                ]
-                            },
-                            step=completed_steps,
-                        )
-                    
+                            if wandb.run is not None:
+                                wandb.log({"Speech samples": [AudioLog(item["audio"], caption=item["text"], sample_rate=unwrapped_vae.config.sampling_rate) for item in generated_audios]}, step=completed_steps)
 
         if completed_steps >= args.max_train_steps:
             break
