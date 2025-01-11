@@ -1,21 +1,23 @@
 
 # Absolute paths for different resources
 paths:
-  train_file: "data/train.json"
+  train_file: "data/train.computed.6000.json"
   val_file: "data/val.json"
-  test_file: "data/val.json"
-  # resume_from_checkpoint: "/home/sang/work/TangoFlux/outputs_e28/best"
+  test_file: "data/test.json"
+  # resume_from_checkpoint: "/home/sang/work/TangoFlux/step_1500/step_1500"
   resume_from_checkpoint: ""
   output_dir: "outputs/"
+  vae_dir: "/mnt/disks/training-data-refine/RAPCHAT_DATASET_VAE"
 
 # Training-related parameters
 training:
-  per_device_batch_size: 9
+  per_device_batch_size: 12
   learning_rate: 5e-4
-  gradient_accumulation_steps: 3
-  num_train_epochs: 40
-  num_warmup_steps: 2000
+  gradient_accumulation_steps: 1
+  num_train_epochs: 60
+  num_warmup_steps: 500
   max_audio_duration: 30
+  max_grad_norm: 0.7
   
  
 # Model and optimizer parameters, 

@@ -1,17 +1,1002 @@
 [
     {
-        "captions": "Chillwave and Lo-fi Hip-Hop influenced beat with a groovy and upbeat tempo.",
-        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/2B4633C0-798F-11EF-8301-E5662656CD9C_chunk3.wav",
+        "captions": "Smooth and relaxing instrumental hip hop track with a groovy and minimalist vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/50B2AB60-13AC-11E9-806D-7BD3439262FB_chunk10.wav",
         "duration": 30.0
     },
     {
-        "captions": "Melancholic and nostalgic soundscape with psychedelic and trippy elements.",
-        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F78C9250-E167-11EE-B313-A51536C2C474_chunk1.wav",
+        "captions": "An energetic and groovy track, perfect for a soundtrack or background music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/49512640-1C80-11ED-8C9C-B50CBAFC132F_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A hopeful and romantic track with upbeat tempo and Balkan influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/12B0D3E0-568D-11EE-89AB-F799F4D2229E_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Chill and groovy hip hop beat with a hopeful mood. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0E50B750-F8C5-11ED-8A96-37FC33B498AA_chunk5.wav",
         "duration": 30.0
     },
     {
         "captions": "Upbeat and groovy hip-hop beat with a soulful vibe, perfect for relaxing or working.",
-        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/226FE010-BA19-11EE-AE6F-D9E72AE17E1B_chunk2.wav",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E0241690-941C-11ED-AADF-F963DDD86B67_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy neo-soul track with a catchy beat and smooth vocals.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/779E79D0-6772-11EC-B97B-D77B4ECC2FC1_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and hopeful instrumental track, perfect for background music or projects needing an upbeat vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/AB1EE9A0-F7D4-11EC-95B2-EB7BE1F5CBBB_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and soulful hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E27149C0-4099-11E9-AE11-9788C3E1A21B_chunk7.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful neo-soul and hip-hop beat with a groovy feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/838B1DB0-8224-11EE-8514-ED54F7767280_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/03422E80-EA8D-11EC-9FD4-534A57404034_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic track with a groovy feel, perfect for setting a positive mood.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C8EB86B0-65D9-11EC-A3D1-2F672ED4EE2D_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop beat, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/CC8E3460-0385-11EF-B675-BBAF81957D4D_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DFF01210-FC6D-11EC-A3A7-4B91041AA797_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E6155820-F0EC-11ED-90A9-DDE8FD260A4D_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A smooth and groovy beat with a trippy vibe, perfect for relaxing or focusing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/ADCAA800-136F-11EC-846A-2FB089A0FC4B_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy track with a laid-back vibe, perfect for relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E4D46F80-6EDC-11EB-8976-2D44006E0711_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/974F36B0-0BC3-11E9-87C4-879FF0204D1E_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Happy and energetic acoustic instrumental track, great for background music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/29CBFBF0-9DE1-11ED-A625-874F46D988D7_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip hop beat with a driving rhythm and soulful vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/13D2B390-889E-11EE-BD4B-C3A9536B5F7B_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and relaxing instrumental track, perfect for studying or background listening.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/86AE5FB0-EEEC-11EC-8FBD-F78542CC727E_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic instrumental hip-hop track with a groovy vibe, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C87D9990-15C1-11EE-B956-81E849B13947_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a trippy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C1F23130-8246-11ED-A7FA-C3782C1DFB6B_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a blend of Hip-Hop and Dubstep influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/555B2920-2068-11EF-B4E2-DDE2DC07D848_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for a variety of uses.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/29409360-489C-11EE-AA8D-19C3DF71B5CE_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat with a blend of Neo-Soul and Hip-Hop influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0A77B3B0-EE1D-11E9-83C6-B178FD112ECE_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A melancholic and romantic neo-soul track with psychedelic and trippy elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/FC60B910-751E-11EE-AFE8-8583E827D55C_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A vibrant and energetic instrumental track perfect for hip-hop and electronic music projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/03DDB840-E9EC-11EE-BEF0-25B0B1AA1B35_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy lo-fi hip-hop beat with a hopeful mood.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/46A70AF0-13CC-11EA-94FB-9D9639D75C94_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop track with a catchy rhythm and mellow vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/ECE352E0-7D84-11EE-ACCB-8DAC4BF52A52_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/981AAAD0-1D7F-11ED-B7BF-4B83618DFBFE_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful instrumental hip hop track with a groovy vibe. Perfect for relaxing or focusing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1923D5F0-1467-11EE-B956-81E849B13947_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A smooth and groovy beat perfect for relaxing or working. It features a downbeat tempo and a mellow vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/61A85A60-181F-11EE-BC66-6169013950D7_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and relaxing hip-hop instrumental perfect for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/91B37D70-D0ED-11EE-BEE3-89C479EE40B5_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and hopeful instrumental hip-hop track, perfect for background music or video games.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/571C5730-C82E-11EE-A60B-770A7F5D7583_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a neo-soul influence, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D32FB7D0-D38E-11ED-BBB8-AB5EFD46823F_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat with a strong drum and bass presence.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3F4532B0-5234-11ED-9B4F-D518A44A5F6C_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and relaxing hip-hop remix ideal for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F36EE7A0-F3D8-11EC-8FBD-F78542CC727E_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A vibrant and catchy instrumental track perfect for background music or creative projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/24826DA0-EC02-11EC-A694-399F3331A434_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop beat, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/7537C060-ABE2-11ED-8C55-F3C7676E564A_chunk8.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and smooth hip-hop track with a groovy feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9C0227B0-7740-11E9-91F9-CD1A0D7B44A4_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A happy and relaxed psychedelic neo-soul remix with groovy and smooth vibes.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3452FDD0-1A64-11EE-BC66-6169013950D7_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Melodic and energetic downbeat track with psychedelic influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F033F840-3AA4-11EF-8461-CD5FFAB643F5_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and driving electronic dance music track with a strong drum and bass focus.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1E83D9F0-11D0-11EC-846A-2FB089A0FC4B_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Relaxing and smooth instrumental track ideal for a calm and peaceful morning.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B33F9280-1A5E-11EE-BC66-6169013950D7_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy track, perfect for workouts or upbeat projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/61C01EC0-1620-11EF-9310-C955C51F4377_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "An upbeat and energetic track with a driving beat. Suitable for workouts or high-energy settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/4E689550-6D42-11EE-9798-C30B432920A3_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and romantic neo-soul track, perfect for a relaxing evening or a soundtrack to your daydreams.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9BEA1DE0-0AFC-11EB-9F9B-A96C01E0CB7B_chunk7.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and upbeat hip-hop beat with a soulful vibe, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9ED59140-5D40-11ED-8BB4-292EA34FBF63_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy and hopeful instrumental track, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/6A8046F0-1287-11ED-89B2-FDFB90A28953_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and hopeful instrumental hip hop beat with a driving beat and soulful vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/472DC600-40F8-11E9-810B-275864E389E9_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat with a driving rhythm, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/93119450-863B-11EF-B8AC-3DCBFAB42185_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for workouts or creative projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5BFC55B0-5E12-11EE-8C95-7738AAECAACC_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a driving beat.  Perfect for energetic workouts or a feel-good vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C90DAE50-BE0E-11ED-842F-01078E9AC456_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A hopeful and upbeat hip-hop beat, perfect for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C3954650-03B4-11ED-95FB-8B3884BBB373_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy track blending Gospel vocals with Dubstep and EDM elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/775A5BB0-EF08-11EC-8FBD-F78542CC727E_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat, perfect for hip-hop and neo-soul tracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E7497E40-432F-11EC-9E2B-CBA0F14D3603_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful instrumental hip hop track with a groovy, beat-driven vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/717D0270-E176-11EA-B885-4D3D417F11EF_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and reflective track with a neo-soul feel, blending romantic and hopeful moods.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C7CD05C0-286E-11EE-9E82-771AABA83011_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a driving beat, perfect for energetic moments.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9EC40B10-70DF-11EE-9505-0335932D4FE4_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and hopeful instrumental hip hop beat, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/57D43430-D096-11ED-BDEE-816840E86563_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and upbeat hip hop track with a soulful vibe, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A7D531B0-06CE-11ED-95FB-8B3884BBB373_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for workouts or creative projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/206D4DE0-0821-11EC-B611-6F4504559961_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop beat perfect for relaxing or studying. It features a mix of upbeat and downbeat elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/28CAB910-8FBC-11EB-BC25-132AA2CC34E3_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful instrumental hip-hop track, perfect for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A9065330-7CAA-11EA-9B18-6B03BF21B063_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic track, perfect for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/09FE28E0-0F85-11EA-94FB-9D9639D75C94_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a mellow vibe, ideal for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D7A45AE0-1E8F-11E9-A2C8-79FAAF03C164_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop beat with a hopeful and upbeat mood.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/22821A50-E099-11E8-B0D1-B99CE3CEDC4F_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and upbeat instrumental track with a driving beat. Ideal for background music or creative projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1B908EA0-145C-11EF-98E9-770EB1969259_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop instrumental track, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/18538E60-BAA6-11ED-842F-01078E9AC456_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and trippy downbeat remix with a blend of hip-hop and EDM influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/4C6C09E0-1D88-11ED-B7BF-4B83618DFBFE_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A joyful and groovy remix with Gospel influences, bringing together elements of Latin and Hip-Hop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/14EBD360-E0E7-11ED-8DE4-89C2BBD702C4_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and nostalgic hip-hop beat with soulful undertones, perfect for a soundtrack.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/34E22AF0-385F-11EE-8CAD-67ACD07022B6_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for setting a positive and energetic mood.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/73B25A70-EE8A-11EE-89CE-51403760CF00_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a driving beat. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/94FC8420-C069-11EE-A797-FF193DB0A334_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A hopeful and upbeat instrumental hip-hop track, perfect for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/507111C0-6E4C-11EC-B97B-D77B4ECC2FC1_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy and upbeat instrumental hip-hop track with a driving beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F7566AA0-6C97-11EC-B97B-D77B4ECC2FC1_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and melodic dance track with a groovy and psychedelic feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/94088680-9F54-11EE-B0EC-C5BEA7DF1E71_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a driving rhythm and soulful feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/41E7B710-A438-11EA-B114-F700365C1DB9_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow, trippy, and groovy hip hop beat with a laid-back vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E4D46F80-6EDC-11EB-8976-2D44006E0711_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a hopeful mood, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0EF39A90-489B-11ED-89C8-F5D2B846F383_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A hopeful and cool beat-driven track with a neo-soul influence.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/55F79830-EA01-11ED-BAAE-59BE9B69084D_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F3DF20B0-A634-11ED-A625-874F46D988D7_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip hop instrumental track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/25491E20-DA39-11E8-9673-1BC73F57E5CE_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy track with a groovy feel, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/836276B0-67AF-11EE-B465-5384EE82A8A1_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and rhythmic track, ideal for hip-hop and electronic music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5F9C5350-90A8-11EE-9B27-1FCA171041EA_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy, beat-driven track with a mellow vibe, perfect for relaxing or focusing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5C930B20-E7A6-11EB-9C88-21B06E677594_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a soulful vibe, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/FC32AFA0-AE6A-11ED-BEF9-BDFADE376A3C_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and nostalgic instrumental track with a smooth, relaxed vibe, perfect for a soundtrack or background music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DF6CABC0-6E89-11EE-8B22-9F1E300AFCA9_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy lo-fi hip-hop beat with a driving rhythm.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B8E98DA0-1223-11E9-9568-E3DF1101EAF1_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and hopeful instrumental track, perfect for soundtracks or upbeat video games.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/166A25E0-5585-11ED-8E69-F3A82EC12FA3_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy neo-soul track with a driving beat.  Perfect for lo-fi hip hop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/445E20A0-FA93-11EE-8F7C-D7507D0A2381_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic track with a groovy feel, perfect for a positive and energetic vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/2957BF60-42BE-11EE-B21A-6B23F097BE98_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and nostalgic soundscape, perfect for background or romantic settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/021B9930-7B3F-11E9-B54D-B78B00960262_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy, this track blends hip-hop and neo-soul influences for a hopeful and groovy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5ECD4590-3791-11ED-BCC1-1D6402C8FE24_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/803E9590-5A1D-11ED-8AB0-6B72C74839B9_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop track with a catchy beat. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5C50A7E0-6AFB-11EF-8074-2DFB41B49EBF_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy chillwave track with a smooth neo-soul vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/81A08500-250C-11EE-B76A-95BB7A739603_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic instrumental hip hop track with a groovy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/33309E30-497C-11ED-89C8-F5D2B846F383_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A smooth and romantic downbeat track, ideal for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C58262C0-D730-11EA-A15D-D12E291C5033_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a driving rhythm, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/048E3BB0-75A4-11ED-9253-25985AC4829D_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop track, perfect for a soundtrack or background music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/6E85A260-9DE4-11EE-905D-5D373BF0EE07_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1AB7C1D0-1627-11EE-B956-81E849B13947_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a driving beat. Perfect for a chill vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/7DBDD490-759E-11EF-A153-57D2B03E65E5_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy track with a blend of blues, jazz, and reggae influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/17CC6980-C67F-11EA-9814-1B9D64EE6DFD_chunk7.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy, upbeat instrumental track with a driving beat. Perfect for hip-hop, neo-soul, or lo-fi projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/485F0530-57B4-11ED-8E69-F3A82EC12FA3_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and driving beat with a blend of Hip-Hop and Neo-Soul influences. Ideal for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DAB89F90-446D-11ED-89C8-F5D2B846F383_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A song about love and relationships, expressing hurt and confusion.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/2059B040-4989-11EE-AEC1-0376CA93783B_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Romantic and hopeful instrumental hip hop track with groovy vibes, ideal for soundtracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/62AAF400-CC1E-11EE-8D8F-11F8C5F3171A_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat, perfect for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F49C0150-9524-11EE-846A-BD98A191E94F_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic hip hop track with a groovy feel. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F6538940-3F40-11ED-BCC1-1D6402C8FE24_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a groovy and upbeat vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9D4348C0-B31D-11EE-A1FE-611E5C281B91_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a driving rhythm, ideal for hip-hop and electronic music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0E4C47A0-C526-11E9-90B9-EF4CEB0A67FE_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for creative projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/88616490-1CB0-11EE-8C76-2DC229E265BC_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and upbeat neo-soul hip hop instrumental track, ideal for a soundtrack.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/29CA2CB0-D9CE-11EE-ACB6-999AE7DB4885_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "An energetic and groovy track with a hip-hop beat. The song features strong basslines and catchy vocals.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3EF5EBA0-05A9-11EE-BCD5-730CCDA14CFC_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a driving beat. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1CD54A00-94BE-11EC-B094-07ED5B2D9E20_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy track, perfect for high-energy settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E7818B50-9368-11EA-B0A3-6F80FFBCBA2D_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/ACA178D0-383C-11ED-BE31-EB2744C7D92B_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy, upbeat track with a blend of Hip-Hop and Lo-fi influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/72BA3E80-CB4E-11EE-9E4D-5B0A976634D3_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy and hopeful instrumental piece with romantic and upbeat moods.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B04DC770-BA88-11EE-A10D-EFDF4905AD29_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a driving rhythm and soulful vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0D9114C0-7316-11ED-8CF3-29B7FFD48FA0_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy, beat-driven track with a mellow vibe, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B38A6AE0-D943-11E9-8009-15FBCBC734FF_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and smooth neo-soul track with psychedelic and melodic elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F0BF3070-57CB-11E9-A44F-19B9E03F18E8_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/7CB9EFA0-EDD5-11EC-8FBD-F78542CC727E_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and upbeat track with a groovy feel, perfect for a variety of settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/92D306A0-079C-11EE-BB5B-7B7CE1221378_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip hop beat perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3028B390-193C-11EE-BC66-6169013950D7_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a hopeful mood, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DCD49E20-4BDD-11EC-9615-DDF4AF8FD302_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy instrumental track with a mix of Hip-Hop, Jazz Fusion, and Middle Eastern influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B59B72B0-B411-11EC-B92A-7D86F950DACE_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/14C88E20-11C9-11ED-A09B-61EF36DE33C3_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and upbeat hip-hop beat with a groovy, neo-soul vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/83A51210-47FF-11EE-AA8D-19C3DF71B5CE_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A beat-driven track with romantic and soulful moods, ideal for a soundtrack.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/19ADFF90-2665-11EE-9E82-771AABA83011_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful instrumental hip hop track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5FBA6420-4357-11ED-89C8-F5D2B846F383_chunk8.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "An energetic and upbeat track, perfect for use as a soundtrack or loop in various projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/6F9E7800-94C4-11EC-9A57-6BF0C5BB6D7C_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a trippy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/ECEE9DB0-9A9C-11ED-B2F7-C5693F968661_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and romantic hip-hop track, perfect for relaxing or setting a chill vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/8407C140-75B2-11E9-91F9-CD1A0D7B44A4_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Relaxing and happy neo-soul track, perfect for downtempo vibes.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D74D1370-CDFF-11EC-850D-A306D8384389_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/4BAD2B50-E321-11EE-96E8-4D293F98AD80_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A melancholic and ethereal soundscape with gospel and psychedelic influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/14EC78A0-0200-11EC-B611-6F4504559961_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and upbeat instrumental hip-hop track with a driving beat. Perfect for high-energy projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/B7819890-69A8-11EE-8FFB-D7EF86414CAA_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/9C67BD10-E9FF-11ED-84AA-852938EEF94B_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip-hop beat perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/34F669C0-6CB4-11EC-B97B-D77B4ECC2FC1_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy neo-soul track with a groovy, beat-driven loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F41A2EB0-4ED2-11EF-B462-87773C59BF60_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track with a blend of Hip-Hop and Neo-Soul influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/84E90190-AB57-11EC-9A57-6BF0C5BB6D7C_chunk7.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy track perfect for relaxing or studying. It features a laid-back tempo and smooth instrumentation.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/98C3F7A0-B58D-11EE-9326-8D6F557077DE_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A relaxed and hopeful track blending Gospel, Blues, and Indian influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5F42FCC0-906E-11EB-A286-E17163EE88D6_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat with a laid-back vibe, perfect for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3506B480-DD53-11EE-93B2-7FE84A8020B6_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for a romantic setting.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/BB94A8B0-1F75-11ED-B7BF-4B83618DFBFE_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and hopeful instrumental track with a mellow vibe, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D7CBF940-DD1A-11EC-B320-D18228FCFCF0_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic beat-driven track with a groovy feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/72B6AA10-F272-11EC-8FBD-F78542CC727E_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and happy hip hop track, perfect for a soundtrack or loop.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C7D58610-F57D-11ED-8BAE-5908CB78E98C_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful hip hop beat with a groovy, soulful vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/15588240-58BD-11EF-8A06-E5B00B5D8064_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and tense track with romantic and festive elements.  Suitable for soundtracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DED18CB0-9A57-11EC-B094-07ED5B2D9E20_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and upbeat instrumental track with a groovy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5D09AEB0-889E-11EE-BEE1-7F368F501084_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a driving rhythm and soulful vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F40129E0-B6EF-11EE-8A0B-77B932FD2151_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a neo-soul influence. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0460EF00-7379-11EA-9A63-133974D241B5_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mesmerizing soundscape blending psychedelic, minimalist, and experimental elements.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/75548070-1FB3-11E9-B87A-71BC038A6677_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A chill and groovy hip-hop beat, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/7ABBA470-3062-11EE-887A-DD6772F78C9A_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A beat-driven instrumental track perfect for hip-hop and neo-soul projects.  It features a soulful and mellow vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/4F6C3EA0-A3DC-11ED-9A9A-5F5C0445E244_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A groovy, beat-driven track with a soulful vibe. Perfect for relaxing or focusing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/814B6220-97B5-11EE-BB13-B917C26CBB17_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A beat-driven track with a driving rhythm and a heavy bassline. Perfect for hip-hop and electronic music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/99CA9440-CCC4-11ED-A3D1-ED666C621C12_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A cool and upbeat instrumental track, perfect for hip-hop and EDM genres.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/55FE3220-180B-11E9-9219-C72A3C95022A_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a blend of Neo-Soul and Hip-Hop influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A867A190-98E5-11ED-B2F7-C5693F968661_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and romantic neo-soul track, perfect for background or soundtracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F02ACCB0-6958-11EF-8FFF-7DDA1C3BB648_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and upbeat track with a groovy feel, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/4E2774A0-BCD4-11EC-835C-3DD56272316E_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A beat-driven track with a groovy and upbeat tempo. Ideal for relaxing or focusing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/FDDF67A0-7D6F-11EA-9622-FD0A9C84960F_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track, perfect for setting an active mood.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/42B08270-ADA0-11ED-85D2-0BC53968CB66_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track, perfect for workouts or gaming soundtracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/77CC2C20-11EF-11EF-8D3B-3170BD7355B6_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy track perfect for late-night drives or relaxing evenings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/77602B20-EA4E-11E8-A3D4-F998B495DDF6_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and relaxing beat-driven track with a groovy feel.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D7A43990-DB42-11EA-B761-31074DCD508D_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy Lo-fi hip hop beat with a neo-soul influence.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A1F839D0-AD28-11ED-B4B3-37B23F07F597_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A vibrant and energetic instrumental track with a groovy rhythm.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/ABBAEC50-0971-11EA-94FB-9D9639D75C94_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat, perfect for hip-hop and neo-soul tracks.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/BE7841D0-304D-11EC-AB21-83F52B5D1217_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and groovy hip hop beat, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/EB8EC6B0-EDE1-11EC-8FBD-F78542CC727E_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a neo-soul influence.  Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E36888E0-E573-11EA-998B-BFC27C85C4F8_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and hopeful neo-soul track with a groovy vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/8803D480-6E55-11EB-8976-2D44006E0711_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Chillwave beat-driven track with a groovy and laid-back vibe.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/537228B0-F7F6-11EE-A83B-1D779E0AA527_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A chill and mellow hip-hop beat with a groovy vibe, perfect for relaxing or studying.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/0DB0F2D0-86E0-11ED-B94D-A10A8526A6FF_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and energetic track, perfect for high-energy settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/C2980660-70E8-11ED-8CF3-29B7FFD48FA0_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A cool and beat-driven track perfect for relaxing or as a soundtrack.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5165F930-2545-11EA-8FD3-C7C93E642224_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a hopeful mood, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/CE4CA5B0-8DDA-11ED-B8A9-4FB94484413E_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A8053DE0-480B-11EE-A45B-5957012B1101_chunk6.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and hopeful instrumental track, perfect for soundtracks or upbeat background music.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E9591020-20BD-11EE-9E82-771AABA83011_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Groovy and hopeful instrumental track, perfect for romantic soundtracks and neo-soul projects.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/D9612240-315B-11ED-9721-31149863E9F2_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and beat-driven track with a groovy feel. Ideal for energetic settings.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/A9C3EED0-3587-11EC-BAE9-59674CCC53CA_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A downbeat and psychedelic neo-soul remix with romantic and trippy moods.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/F10D65D0-CAF8-11EC-88DF-1D6BEA2239D2_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop beat with a neo-soul influence. Perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/75EB5B20-D35A-11EE-A0FC-57FA516325D4_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Uplifting and hopeful instrumental track with a blend of Asian, Middle Eastern, European, and African influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/3825B160-315C-11ED-9721-31149863E9F2_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy beat-driven track with a blend of hip-hop and neo-soul influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/8CB889B0-049F-11EF-817E-9BB7CBC6987D_chunk5.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/7D71DF30-F74C-11E8-B065-69497E215913_chunk8.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A mellow and relaxing hip-hop track, perfect for studying or relaxing.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/413AEED0-71B3-11EE-8B22-9F1E300AFCA9_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and rhythmic track with a blend of gospel and techno influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/1444FCC0-FB59-11ED-8354-C32D03525BB3_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip-hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/5DA10940-1944-11EF-83D9-09DC54C2F4B0_chunk2.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A hopeful and romantic downbeat hip hop track, ideal for lofi hip hop and neo-soul lovers.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/E21714A0-7677-11E9-B7FB-BD328BA9C970_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Energetic and groovy hip hop beat, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/CDF9C850-6E54-11EC-A3D1-2F672ED4EE2D_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip hop beat with a neo-soul influence.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/DE954760-1F29-11EF-9514-751FFD6BDC5F_chunk3.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A beat-driven track with a cool and upbeat mood. It features a blend of Hip-Hop and EDM influences.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/6DC8AA30-5A0F-11ED-A4E5-F792799D1BFA_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/31B454C0-F314-11EC-90BB-CBEE86E1B290_chunk4.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "A captivating and groovy track perfect for late-night drives or relaxing moments.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/71815830-E442-11ED-8D6B-FD5F24BE8C56_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Uplifting and relaxed instrumental music, perfect for the holiday season.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/8627FA30-7EB5-11EC-ACF2-151029447E5A_chunk1.wav",
+        "duration": 30.0
+    },
+    {
+        "captions": "Upbeat and groovy hip-hop track, perfect for relaxing or working.",
+        "location": "/mnt/disks/training-data-refine/RAPCHAT_DATASET/17917800-761D-11EA-AF48-49C173F2B9F8_chunk2.wav",
         "duration": 30.0
     }
 ]

@@ -1,0 +1,5 @@
+[default]
+entity = tsdocode-personal
+project = Text to Audio Flow matching
+base_url = https://api.wandb.ai
+

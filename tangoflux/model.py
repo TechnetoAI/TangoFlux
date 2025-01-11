@@ -511,7 +511,6 @@ class TangoFlux(nn.Module):
         
         # print(f"{encoder_hidden_states.shape=}")
         
-        duration_hidden_states = self.encode_duration(duration)
         
         # print(f"{duration_hidden_states.shape=}")
         
@@ -522,6 +521,9 @@ class TangoFlux(nn.Module):
         rand_span_mask = mask_from_frac_lengths(lens, frac_lengths)
         
         cond = torch.where(rand_span_mask[..., None], torch.zeros_like(latents), latents)
+        
+        duration_hidden_states = self.encode_duration(frac_lengths * duration)
+        
         
         # torch.set_printoptions(precision="full")
         # print(f"{rand_span_mask.shape=}")

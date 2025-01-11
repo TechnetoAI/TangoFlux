@@ -424,7 +424,7 @@ def main():
         total_loss, total_val_loss = 0, 0
         for step, batch in enumerate(train_dataloader):
             with accelerator.accumulate(model):
-                device = model.device
+                device = "cuda:0"
                 text, audios, duration, _ = batch
 
                 with torch.no_grad():
@@ -533,7 +533,7 @@ def main():
                         with accelerator.accumulate(model) and torch.no_grad():
                             unwrapped_vae = accelerator.unwrap_model(vae)
                             unwrapped_model = accelerator.unwrap_model(model)
-                            device = model.device
+                            device = "cuda:0"
                             text, audios, duration, _ = batch
 
 
@@ -592,7 +592,7 @@ def main():
         )
         for _, batch in enumerate(eval_dataloader):
             with accelerator.accumulate(model) and torch.no_grad():
-                device = model.device
+                device = "cuda:0"
                 text, audios, duration, _ = batch
 
                 audio_list = []
