@@ -179,7 +179,6 @@ def main():
     num_warmup_steps = int(config["training"]["num_warmup_steps"])
     per_device_batch_size = int(config["training"]["per_device_batch_size"])
     gradient_accumulation_steps = int(config["training"]["gradient_accumulation_steps"])
-    max_grad_norm = float(config["training"]["max_grad_norm"])
 
     output_dir = config["paths"]["output_dir"]
 
@@ -486,7 +485,6 @@ def main():
                     progress_bar.update(1)
                     completed_steps += 1
                     
-                    accelerator.clip_grad_norm_(model.parameters(), max_grad_norm)
 
                 optimizer.step()
                 lr_scheduler.step()
