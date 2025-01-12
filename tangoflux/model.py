@@ -288,16 +288,15 @@ class TangoFlux(nn.Module):
         )
         timesteps = timesteps.to(device)
 
-        # Create random latents for entire 30s (645 steps)
-        latents = torch.randn(num_samples_per_prompt, self.audio_seq_len, 64, device=device)
+        latents = torch.randn(num_samples_per_prompt, self.audio_seq_len, 64)
+        weight_dtype = latents.dtype
 
-        # <-- NEW LOGIC: If prefix is given, copy it in
         if prefix is not None:
             prefix_len = prefix.shape[1]
             latents[:, :prefix_len, :] = prefix
 
         progress_bar = tqdm(range(num_inference_steps), disable=disable_progress)
-        txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3, device=device)
+        txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3).to(device)
         audio_ids = (
             torch.arange(self.audio_seq_len)
             .unsqueeze(0)
@@ -306,7 +305,10 @@ class TangoFlux(nn.Module):
             .to(device)
         )
 
-        # Diffusion loop
+        timesteps = timesteps.to(device)
+        latents = latents.to(device)
+        encoder_hidden_states = encoder_hidden_states.to(device)
+
         for i, t in enumerate(timesteps):
             latents_input = torch.cat([latents] * 2) if classifier_free_guidance else latents
             noise_pred = self.transformer(

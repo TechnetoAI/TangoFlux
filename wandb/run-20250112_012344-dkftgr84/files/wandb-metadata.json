@@ -1,0 +1,21 @@
+{
+  "os":  "Linux-5.10.0-33-cloud-amd64-x86_64-with-glibc2.31",
+  "python":  "CPython 3.10.0",
+  "startedAt":  "2025-01-12T01:23:45.081195Z",
+  "args":  [
+    "--checkpointing_steps=1000",
+    "--save_every=5",
+    "--config=configs/tangoflux_config.yaml"
+  ],
+  "program":  "/home/sang/work/TangoFlux/tangoflux/train.py",
+  "codePath":  "tangoflux/train.py",
+  "git":  {
+    "remote":  "https://github.com/TechnetoAI/TangoFlux.git",
+    "commit":  "e392be016ecc4846578f7970de03ef07ad61a098"
+  },
+  "email":  "akhil@cassetteai.com",
+  "root":  "/home/sang/work/TangoFlux",
+  "host":  "tangoflux-dev",
+  "executable":  "/opt/conda/envs/tango/bin/python3.10",
+  "codePathLocal":  "tangoflux/train.py"
+}
