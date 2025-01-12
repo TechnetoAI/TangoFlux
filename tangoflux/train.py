@@ -488,7 +488,6 @@ def main():
 
                 optimizer.step()
                 lr_scheduler.step()
-                optimizer.zero_grad()
                 
                 
 
