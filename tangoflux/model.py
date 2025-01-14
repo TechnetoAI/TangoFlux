@@ -389,7 +389,9 @@ class TangoFlux(nn.Module):
             duration = torch.tensor([duration], device=device)
         classifier_free_guidance = guidance_scale > 1.0
         if prefix is not None:
-            duration_hidden_states = self.encode_duration(duration / self.max_duration)
+            duration_hidden_states = self.encode_duration(
+                torch.tensor(self.max_duration - prefix_duration, device=device)
+            )
         else:
             duration_hidden_states = self.encode_duration(duration)
 
