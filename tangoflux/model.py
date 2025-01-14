@@ -30,7 +30,7 @@ import inspect
 import yaml
 from tangoflux.utils import mask_from_frac_lengths, mask_from_prefix
 
-
+import time
 
 
 
@@ -218,13 +218,11 @@ class InputEmbedding(nn.Module):
         x = self.proj(torch.cat((x, cond, fused_emb), dim=1))
         x = self.conv_pos_embed(x) + x
         
-        
         return x
-
 
 class TangoFlux(nn.Module):
 
-    def __init__(self, config, initialize_reference_model=False):
+    def __init__(self, config, initialize_reference_model=False, infilling=False):
 
         super().__init__()
 
@@ -269,6 +267,11 @@ class TangoFlux(nn.Module):
         self.frac_lengths_mask: tuple[float, float] = (0.7, 1.0)
         
         self.input_embedding = InputEmbedding(self.in_channels, 1024, 1024)
+        
+        self.infilling = infilling
+        
+        if infilling:
+            print(f"Init model with infilling mode")
         
 
     def get_sigmas(self, timesteps, n_dim=3, dtype=torch.float32):
@@ -341,12 +344,13 @@ class TangoFlux(nn.Module):
         return prompt_embeds, boolean_prompt_mask
 
     @torch.no_grad()
+    @torch.autocast(device_type="cuda", dtype=torch.float32)
     def encode_text(self, prompt):
         device = self.text_encoder.device
         batch = self.tokenizer(
             prompt,
             max_length=self.max_text_seq_len,
-            padding=True,
+            padding="max_length",
             truncation=True,
             return_tensors="pt",
         )
@@ -376,6 +380,7 @@ class TangoFlux(nn.Module):
         disable_progress=False,
         num_samples_per_prompt=1,
         prefix=None,
+        prefix_duration=None
     ):
         """Only tested for single inference. Haven't test for batch inference"""
 
@@ -388,7 +393,14 @@ class TangoFlux(nn.Module):
         if not isinstance(duration, torch.Tensor):
             duration = torch.tensor([duration], device=device)
         classifier_free_guidance = guidance_scale > 1.0
-        duration_hidden_states = self.encode_duration(duration)
+        if prefix is not None:
+            duration_hidden_states = self.encode_duration(
+                torch.tensor([self.max_duration - prefix_duration], device=device)
+                # duration / prefix_duration
+            )
+        else:
+            duration_hidden_states = self.encode_duration(duration)
+
         if classifier_free_guidance:
             bsz = 2 * num_samples_per_prompt
 
@@ -451,27 +463,25 @@ class TangoFlux(nn.Module):
             )            
             
             if prefix is not None:
-                cond = F.pad(prefix, (0, 0, 0, latents_input.shape[1] - prefix.shape[1]), value=0.0)
-
+                cond = F.pad(prefix, (0, 0, 0, latents_input.shape[1] - prefix.shape[1]), value=0.0)    
+                
+                cond = (
+                    torch.cat([cond, cond]) if classifier_free_guidance else cond
+                )     
+                
+                
+                fused_hidden_states = self.input_embedding(
+                    latents_input, cond, encoder_hidden_states, duration_hidden_states
+                )
                 
             else:            
                 cond = torch.zeros_like(latents_input)
-                
-            
-            cond = (
-                torch.cat([cond, cond]) if classifier_free_guidance else cond
-            )     
-            
-            # print(f"{cond.shape=}")
-            # print(f"{latents_input.shape=}")
-            
-            
-            fused_hidden_states = self.input_embedding(
-                latents_input, cond, encoder_hidden_states, duration_hidden_states
-            )
+                fused_hidden_states = encoder_hidden_states
             
             txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
-
+            
+            
+            
             noise_pred = self.transformer(
                 hidden_states=latents_input,
                 # YiYi notes: divide it by 1000 for now because we scale it by 1000 in the transforme rmodel (we should not keep it but I want to keep the inputs same for the model for testing)
@@ -495,8 +505,8 @@ class TangoFlux(nn.Module):
             progress_bar.update(1)
 
 
-
-        latents = torch.concat((prefix, latents[:, prefix.shape[1]:, :]), dim=1)
+        if self.infilling:
+            latents = torch.concat((prefix, latents[:, prefix.shape[1]:, :]), dim=1)
         
         return latents
 
@@ -508,32 +518,14 @@ class TangoFlux(nn.Module):
 
         encoder_hidden_states, boolean_encoder_mask = self.encode_text(prompt)
         
-        
-        # print(f"{encoder_hidden_states.shape=}")
-        
-        duration_hidden_states = self.encode_duration(duration)
-        
-        # print(f"{duration_hidden_states.shape=}")
-        
         lens = torch.full((latents.shape[0],), audio_seq_length, device=device)
 
         frac_lengths = torch.zeros((latents.shape[0],), device=device).float().uniform_(*self.frac_lengths_mask)
         
+        duration_hidden_states = self.encode_duration(duration*frac_lengths)
+        
         rand_span_mask = mask_from_frac_lengths(lens, frac_lengths)
-        
         cond = torch.where(rand_span_mask[..., None], torch.zeros_like(latents), latents)
-        
-        # torch.set_printoptions(precision="full")
-        # print(f"{rand_span_mask.shape=}")
-        # print(f"{rand_span_mask=}")
-        
-        # print(f"{latents.shape=}")
-        
-        # noisy_model_input = torch.where(rand_span_mask[..., None], noisy_model_input, latents)
-        
-        # audio_ids = torch.where(rand_span_mask[..., None], audio_ids, torch.zeros_like(audio_ids))
-        
-        
         
         mask_expanded = boolean_encoder_mask.unsqueeze(-1).expand_as(
             encoder_hidden_states
@@ -545,14 +537,14 @@ class TangoFlux(nn.Module):
         pooled_projection = self.fc(pooled)
 
 
+        if not self.infilling:
+            ## Add duration hidden states to encoder hidden states
+            encoder_hidden_states = torch.cat(
+                [encoder_hidden_states, duration_hidden_states], dim=1
+            )  ## (bs,seq_len,dim)
 
-        # ## Add duration hidden states to encoder hidden states
-        # encoder_hidden_states = torch.cat(
-        #     [encoder_hidden_states, duration_hidden_states], dim=1
-        # )  ## (bs,seq_len,dim)
-
-        # txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3).to(device)
-        
+            txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3).to(device)
+            
         
         
         
@@ -591,34 +583,19 @@ class TangoFlux(nn.Module):
             
             # cond: float["b n d"], text_embed: float["b n d"], duration_embed: float["b n d"], drop_audio_cond=Fal
             
-            fused_hidden_states = self.input_embedding(
-                noisy_model_input, cond, encoder_hidden_states, duration_hidden_states
-            )
-            
-            txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
-
-            # print(f"{fused_hidden_states.shape=}")
-            # print(f"{encoder_hidden_states.shape}")
-            # exit()
-            
-            # # Adding masking for infilling here
-            # lens = torch.full((latents.shape[0],), audio_seq_length, device=device)
-
-            # frac_lengths = torch.zeros((latents.shape[0],), device=device).float().uniform_(*self.frac_lengths_mask)
-            
-            # rand_span_mask = mask_from_frac_lengths(lens, frac_lengths)
-            
-            # noisy_model_input = torch.where(rand_span_mask[..., None], noisy_model_input, latents)
-            
-            # audio_ids = torch.where(rand_span_mask[..., None], audio_ids, torch.zeros_like(audio_ids))
-            
+            if self.infilling:
+                fused_hidden_states = self.input_embedding(
+                    noisy_model_input, cond, encoder_hidden_states, duration_hidden_states
+                )
+                
+                txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
+            else:
+                fused_hidden_states = encoder_hidden_states
             
 
             model_pred = self.transformer(
                 hidden_states=noisy_model_input,
-                # encoder_hidden_states=encoder_hidden_states,
                 encoder_hidden_states=fused_hidden_states,
-                
                 pooled_projections=pooled_projection,
                 img_ids=audio_ids,
                 txt_ids=txt_ids,

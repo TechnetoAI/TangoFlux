@@ -30,6 +30,14 @@ import torchaudio
 
 logger = get_logger(__name__)
 
+torch._inductor.config.coordinate_descent_tuning = True
+torch._inductor.config.triton.unique_kernel_names = True
+torch._inductor.config.fx_graph_cache = True
+
+# debugging
+torch._logging.set_logs(graph_breaks=True, recompiles=True)
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -248,6 +256,9 @@ def main():
     text_column, audio_column = args.text_column, args.audio_column
 
     model = TangoFlux(config=config["model"])
+    
+    model.transformer.forward = torch.compile(model.transformer.forward, mode="reduce-overhead")
+    
     vae = AutoencoderOobleck.from_pretrained(
         "stabilityai/stable-audio-open-1.0", subfolder="vae"
     )
@@ -563,13 +574,16 @@ def main():
                                 1, 2
                             )
                             
+                            prefix = audio_latent if config["model"]["infilling"] else None
+                            
                         
                             latents = unwrapped_model.inference_flow(
                                 text,
                                 duration=30,
                                 num_inference_steps=32,
                                 guidance_scale=4.5,
-                                prefix=audio_latent,
+                                prefix=prefix,
+                                prefix_duration=10,
                                 disable_progress=True
                             )
                                 
