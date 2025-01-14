@@ -222,7 +222,7 @@ class InputEmbedding(nn.Module):
 
 class TangoFlux(nn.Module):
 
-    def __init__(self, config, initialize_reference_model=False):
+    def __init__(self, config, initialize_reference_model=False, infilling=False):
 
         super().__init__()
 
@@ -267,6 +267,11 @@ class TangoFlux(nn.Module):
         self.frac_lengths_mask: tuple[float, float] = (0.7, 1.0)
         
         self.input_embedding = InputEmbedding(self.in_channels, 1024, 1024)
+        
+        self.infilling = infilling
+        
+        if infilling:
+            print(f"Init model with infilling mode")
         
 
     def get_sigmas(self, timesteps, n_dim=3, dtype=torch.float32):
@@ -390,7 +395,8 @@ class TangoFlux(nn.Module):
         classifier_free_guidance = guidance_scale > 1.0
         if prefix is not None:
             duration_hidden_states = self.encode_duration(
-                torch.tensor(self.max_duration - prefix_duration, device=device)
+                torch.tensor([self.max_duration - prefix_duration], device=device)
+                # duration / prefix_duration
             )
         else:
             duration_hidden_states = self.encode_duration(duration)
@@ -457,23 +463,25 @@ class TangoFlux(nn.Module):
             )            
             
             if prefix is not None:
-                cond = F.pad(prefix, (0, 0, 0, latents_input.shape[1] - prefix.shape[1]), value=0.0)
-
+                cond = F.pad(prefix, (0, 0, 0, latents_input.shape[1] - prefix.shape[1]), value=0.0)    
+                
+                cond = (
+                    torch.cat([cond, cond]) if classifier_free_guidance else cond
+                )     
+                
+                
+                fused_hidden_states = self.input_embedding(
+                    latents_input, cond, encoder_hidden_states, duration_hidden_states
+                )
                 
             else:            
                 cond = torch.zeros_like(latents_input)
-                
-            
-            cond = (
-                torch.cat([cond, cond]) if classifier_free_guidance else cond
-            )     
-            
-            
-            fused_hidden_states = self.input_embedding(
-                latents_input, cond, encoder_hidden_states, duration_hidden_states
-            )
+                fused_hidden_states = encoder_hidden_states
             
             txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
+            
+            
+            
             noise_pred = self.transformer(
                 hidden_states=latents_input,
                 # YiYi notes: divide it by 1000 for now because we scale it by 1000 in the transforme rmodel (we should not keep it but I want to keep the inputs same for the model for testing)
@@ -497,8 +505,8 @@ class TangoFlux(nn.Module):
             progress_bar.update(1)
 
 
-
-        latents = torch.concat((prefix, latents[:, prefix.shape[1]:, :]), dim=1)
+        if self.infilling:
+            latents = torch.concat((prefix, latents[:, prefix.shape[1]:, :]), dim=1)
         
         return latents
 
@@ -517,7 +525,6 @@ class TangoFlux(nn.Module):
         duration_hidden_states = self.encode_duration(duration*frac_lengths)
         
         rand_span_mask = mask_from_frac_lengths(lens, frac_lengths)
-        
         cond = torch.where(rand_span_mask[..., None], torch.zeros_like(latents), latents)
         
         mask_expanded = boolean_encoder_mask.unsqueeze(-1).expand_as(
@@ -530,14 +537,14 @@ class TangoFlux(nn.Module):
         pooled_projection = self.fc(pooled)
 
 
+        if not self.infilling:
+            ## Add duration hidden states to encoder hidden states
+            encoder_hidden_states = torch.cat(
+                [encoder_hidden_states, duration_hidden_states], dim=1
+            )  ## (bs,seq_len,dim)
 
-        # ## Add duration hidden states to encoder hidden states
-        # encoder_hidden_states = torch.cat(
-        #     [encoder_hidden_states, duration_hidden_states], dim=1
-        # )  ## (bs,seq_len,dim)
-
-        # txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3).to(device)
-        
+            txt_ids = torch.zeros(bsz, encoder_hidden_states.shape[1], 3).to(device)
+            
         
         
         
@@ -576,34 +583,19 @@ class TangoFlux(nn.Module):
             
             # cond: float["b n d"], text_embed: float["b n d"], duration_embed: float["b n d"], drop_audio_cond=Fal
             
-            fused_hidden_states = self.input_embedding(
-                noisy_model_input, cond, encoder_hidden_states, duration_hidden_states
-            )
-            
-            txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
-
-            # print(f"{fused_hidden_states.shape=}")
-            # print(f"{encoder_hidden_states.shape}")
-            # exit()
-            
-            # # Adding masking for infilling here
-            # lens = torch.full((latents.shape[0],), audio_seq_length, device=device)
-
-            # frac_lengths = torch.zeros((latents.shape[0],), device=device).float().uniform_(*self.frac_lengths_mask)
-            
-            # rand_span_mask = mask_from_frac_lengths(lens, frac_lengths)
-            
-            # noisy_model_input = torch.where(rand_span_mask[..., None], noisy_model_input, latents)
-            
-            # audio_ids = torch.where(rand_span_mask[..., None], audio_ids, torch.zeros_like(audio_ids))
-            
+            if self.infilling:
+                fused_hidden_states = self.input_embedding(
+                    noisy_model_input, cond, encoder_hidden_states, duration_hidden_states
+                )
+                
+                txt_ids = torch.zeros(bsz, fused_hidden_states.shape[1], 3).to(device)
+            else:
+                fused_hidden_states = encoder_hidden_states
             
 
             model_pred = self.transformer(
                 hidden_states=noisy_model_input,
-                # encoder_hidden_states=encoder_hidden_states,
                 encoder_hidden_states=fused_hidden_states,
-                
                 pooled_projections=pooled_projection,
                 img_ids=audio_ids,
                 txt_ids=txt_ids,

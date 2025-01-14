@@ -574,13 +574,16 @@ def main():
                                 1, 2
                             )
                             
+                            prefix = audio_latent if config["model"]["infilling"] else None
+                            
                         
                             latents = unwrapped_model.inference_flow(
                                 text,
                                 duration=30,
                                 num_inference_steps=32,
                                 guidance_scale=4.5,
-                                prefix=audio_latent,
+                                prefix=prefix,
+                                prefix_duration=10,
                                 disable_progress=True
                             )
                                 
